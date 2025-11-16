@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { Taskbar } from './taskbar/taskbar';
 import { TaskList } from './task-list/task-list';
 import { TodoItem } from './shared/todo-item';
+import { ToolbarHarnessFilters } from '@angular/material/toolbar/testing';
 
 @Component({
   selector: 'app-root',
@@ -21,4 +22,14 @@ export class App {
     { title: 'develop app' },
     { title: 'deploy app' },
   ]);
+
+  selectedTask = signal<TodoItem | undefined>(undefined);
+
+  addItem(rep: TodoItem) {
+    this.todoList.set([...this.todoList(), rep]);
+  }
+
+  removeItem(rep: TodoItem) {
+    this.todoList.set(this.todoList().filter((tit) => tit.title !== rep.title));
+  }
 }

@@ -3,5 +3,5 @@
         <mat-label>Task title</mat-label>
         <input matInput placeholder="Add something to do...">
     </mat-form-field>
-    <app-button [mode]="'save'"></app-button>
+    <app-button [mode]="'save'" (buttonClicked)="buttonExecuted($event)"></app-button>
 </form>

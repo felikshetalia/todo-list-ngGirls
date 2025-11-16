@@ -1,7 +1,7 @@
 <div class="main-box">
   <p>My Todos</p>
   <mat-divider></mat-divider>
-  <app-taskbar></app-taskbar>
+  <app-taskbar (addItemExecuted)="addItem($event)"></app-taskbar>
   <mat-divider></mat-divider>
-  <app-task-list [taskList]="todoList()"></app-task-list>
+  <app-task-list [taskList]="todoList()" (selectedTask)="this.selectedTask.set($event)" (removeExecuted)="removeItem($event)"></app-task-list>
 </div>

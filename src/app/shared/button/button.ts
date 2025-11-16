@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 
 @Component({
@@ -9,4 +9,5 @@ import { MatButton } from '@angular/material/button';
 })
 export class ButtonComponent {
   readonly mode = input.required<'save' | 'remove'>();
+  buttonClicked = output<'save' | 'remove'>();
 }

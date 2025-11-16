@@ -1,5 +1,6 @@
 
-<button matButton="tonal" >
+<button matButton="tonal" 
+(click)="this.buttonClicked.emit(mode())">
     @if(mode() === 'remove'){
         Remove
     }

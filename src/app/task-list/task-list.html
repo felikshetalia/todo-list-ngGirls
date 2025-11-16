@@ -1,0 +1,14 @@
+<div class="task-list">
+
+    @for(item of taskList(); track item.title){
+    <mat-list-item>
+        <div class="task-body">
+        <span class="task-title">{{ item.title }}</span>
+            <span class="actions">
+                <app-button [mode]="'remove'"></app-button>
+            </span>
+        </div>
+    </mat-list-item>
+    }
+
+</div>

@@ -1,1 +1,7 @@
-<p> app works! </p>
+<div class="main-box">
+  <p>My Todos</p>
+  <mat-divider></mat-divider>
+  <app-taskbar></app-taskbar>
+  <mat-divider></mat-divider>
+  <app-task-list [taskList]="todoList()"></app-task-list>
+</div>
